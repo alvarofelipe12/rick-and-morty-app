@@ -14,7 +14,6 @@ const apiClient = axios.create({
 
 /**
  * Service class to handle Rick and Morty API requests
- * Using class-based approach to demonstrate OOP principles
  */
 class RickAndMortyService {
   /**
@@ -78,7 +77,17 @@ class RickAndMortyService {
     const response = await apiClient.get<Episode>(`/episode/${id}`);
     return response.data;
   }
+
+  /**
+   * Extract ID from URL
+   * Helper method to extract ID from Rick and Morty API URLs
+   * @param url - API URL
+   * @returns ID number
+   */
+  extractIdFromUrl(url: string): number {
+    const parts = url.split("/");
+    return parseInt(parts[parts.length - 1], 10);
+  }
 }
 
-// Export a singleton instance
 export const rickAndMortyService = new RickAndMortyService();
