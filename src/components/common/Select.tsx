@@ -35,25 +35,27 @@ export const Select: React.FC<SelectProps> = ({
           {label}
         </label>
       )}
-      <select
-        id={id}
-        name={name}
-        value={value}
-        onChange={onChange}
-        required={required}
-        disabled={disabled}
-        className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
-                   focus:outline-none focus:ring-primary focus:border-primary
+      <div className="relative after:content-['▼'] after:absolute after:top-3 after:right-4 text-gray-500">
+        <select
+          id={id}
+          name={name}
+          value={value}
+          onChange={onChange}
+          required={required}
+          disabled={disabled}
+          className={`w-full p-3 border border-gray-300 rounded-md shadow-sm 
+                   focus:outline-none focus:ring-primary focus:border-primary appearance-none
                    ${disabled ? 'bg-gray-100 cursor-not-allowed' : ''}
                    ${className}`}
-      >
-        <option value="">{placeholder}</option>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+        >
+          <option value="">{placeholder}</option>
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 };

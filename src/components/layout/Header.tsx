@@ -8,7 +8,7 @@ import logo from '../../assets/rick-and-morty-logo.svg'
 const Header: React.FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <header className="bg-primary text-white shadow-md">
+    <header className="bg-white shadow-md sticky top-0">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">

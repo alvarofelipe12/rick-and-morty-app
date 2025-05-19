@@ -14,12 +14,12 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
   return (
     <Link
       to={`/character/${character.id}`}
-      className="block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+      className="block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
       data-testid="character-card"
     >
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col">
         {/* Character Image */}
-        <div className="w-full md:w-2/5">
+        <div className="w-full">
           <img
             src={character.image}
             alt={character.name}
@@ -28,7 +28,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
         </div>
 
         {/* Character Info */}
-        <div className="w-full md:w-3/5 p-4">
+        <div className="w-full p-4">
           <div className="mb-3">
             <h2 className="text-xl font-bold text-gray-800 mb-1" data-testid="character-name">
               {character.name}
