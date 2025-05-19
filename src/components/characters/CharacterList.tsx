@@ -54,6 +54,8 @@ const CharacterList: React.FC<CharacterListProps> = ({
 
   // Calculate current page information
   const totalPages = pagination.pages;
+  // validate if next page is available
+  const nextPageExist = !!pagination.next;
 
   return (
     <div data-testid="character-list">
@@ -65,7 +67,7 @@ const CharacterList: React.FC<CharacterListProps> = ({
       </div>
 
       {/* Pagination Controls */}
-      {totalPages > 1 && (
+      {totalPages > 1 && nextPageExist && (
         <div className="flex justify-center pb-8">
           <Button
             onClick={onPageChange}
