@@ -137,6 +137,7 @@ const CharacterFilter: React.FC<CharacterFilterProps> = ({
         {/* Mobile resposive filters */}
         <Button
           variant="primary"
+          className="lg:hidden"
           onClick={() => setAreFiltersOpen((prevState) => !prevState)}
         >
           ADVANCED FILTERS
